@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Paytone+One&subset=latin-ext');
 
-/* Tady je magie a jednorožci */
 html { box-sizing: border-box; }
 *, ::before, :after { box-sizing: inherit; }
-
 
 body {
 	margin: 0;
