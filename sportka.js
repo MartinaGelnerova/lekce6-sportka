@@ -8,7 +8,7 @@
 // ... který pak přidej dovnitř prvku <div id="vyherni-cisla">:
 
 let osudi = [];
-for (let i = 1; i <=48; i++){
+for (let i = 1; i <=49; i++){
   osudi.push(i);
 }
 
