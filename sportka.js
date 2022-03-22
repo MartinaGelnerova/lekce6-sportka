@@ -21,3 +21,9 @@ for (let i=0; i < 7; i++){
   tazenaCisla.push(vyherniCislo);
   osudi.splice(vyherniIndex,1);
 }
+
+let vyherniCisla = document.querySelector('#vyherni-cisla');
+
+for (let i = 0; i < tazenaCisla.length; i++){
+  vyherniCisla.innerHTML += `<span class='cislo'>${tazenaCisla[i]}</span>`
+}
