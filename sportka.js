@@ -8,12 +8,15 @@
 // ... který pak přidej dovnitř prvku <div id="vyherni-cisla">:
 
 let osudi = [];
+let tazenaCisla = [];
+let vyherniCisla = document.querySelector('#vyherni-cisla');
+
+// generování osudí
 for (let i = 1; i <=49; i++){
   osudi.push(i);
 }
 
-let tazenaCisla = [];
-
+// tažení čísel
 for (let i=0; i < 7; i++){
   let vyherniIndex = Math.floor(Math.random() * osudi.length);
   let vyherniCislo = osudi[vyherniIndex];
@@ -22,8 +25,7 @@ for (let i=0; i < 7; i++){
   osudi.splice(vyherniIndex,1);
 }
 
-let vyherniCisla = document.querySelector('#vyherni-cisla');
-
+// vypsání tažených čísel na stránku
 for (let i = 0; i < tazenaCisla.length; i++){
   vyherniCisla.innerHTML += `<span class='cislo'>${tazenaCisla[i]}</span>`
 }
