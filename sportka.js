@@ -2,7 +2,10 @@
 
 let osudi = [];
 let vyherniCisla = document.querySelector('#vyherni-cisla');
+let historieHer = document.querySelector('#historie-her');
 let tazenaCisla = [];
+let historie = [];
+let counterLosovani = 0;
 
 //naplním osudí
 
@@ -25,10 +28,31 @@ function losuj(){
       osudi.splice(vyherniIndex, 1);
     };
 
+    vyherniCisla = document.querySelector('#vyherni-cisla');
+
+
+// tady řeším zamezení klikání než se vykreslí tažená čísla na obrazovku
+    document.getElementById("losuj").disabled = true;
+    setTimeout(function () {
+      document.getElementById("losuj").disabled = false;
+      }, 2000 * (tazenaCisla.length - 1));
+
+// vykreslení tažených čísel na obrazovku
     for (let i = 0; i < tazenaCisla.length; i++) {
-      vyherniCisla = document.querySelector('#vyherni-cisla');
-      vyherniCisla.innerHTML += '<span class="cislo">' +  tazenaCisla[i] + '</span>';
-      
+        setTimeout(function () {
+        vyherniCisla.innerHTML += '<span class="cislo">' +  tazenaCisla[i] + '</span>';
+        }, 2000 * i)
     }
+    
+// historie tahů
+    historie.push(tazenaCisla)
+    counterLosovani++
+    historieHer.innerHTML = `Historie tahů:  </br>`
+
+    for (i=counterLosovani-1; i >0; i = i -1){
+      historieHer.innerHTML += `${historie[i-1]} </br>`
+    }
+  
+    
 }
 //vypíšu do HTML
